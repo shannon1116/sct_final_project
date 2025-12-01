@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, 
+            initial-scale=1.0">
+            <link rel="stylesheet" href="styles.css">
+            <title>Survey</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Pokemon Survey</h1>
+            <div id="errorText"></div>
+            <form id="surveyForm"action="#"
+            onsubmit="return validateForm()" method="post">
+
+                <div class="form">
+                    <div id="errorFname"></div>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
+                <div class="form">
+                    <div id="errorLname"></div>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname"><br>
+                </div>
+                <div class="form">
+                    <div id="errorEmail"></div>
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form">
+                    <p>Please select a Pokemon:</p>
+                    <div id="errorRadio"></div>
+                    <input type="radio" id="pikachu" name="fav_pokemon"
+                    value="Pikachu">
+                    <label for="pikachu">Pikachu</label><br>
+                    <input type="radio" id="charmander" name="fav_pokemon"
+                    value="Charmander">
+                    <label for="charmander">Charmander</label><br>
+                    <input type="radio" id="bulbasaur" name="fav_pokemon"
+                    value="Bulbasaur">
+                    <label for="bulbasaur">Bulbasaur</label><br>
+                    <input type="radio" id="squirtle" name="fav_pokemon"
+                    value="Squirtle">
+                    <label for="squirtle">Squirtle</label><br>
+                    <input type="radio" id="eevee" name="fav_pokemon"
+                    value="Eevee">
+                    <label for="eevee">Eevee</label>
+                </div>
+                <div class="form">
+                    <p>Please select all of the Pokemon games you
+                        have played in the list below.
+                    </p>
+                    <div id="errorCheckbox"></div>
+                    <input type="checkbox" class="checkbox" id="game1" name="game1"
+                    value="PokemonYellow">
+                    <label for="game1">I have played Pokemon Yellow</label><br>
+                    <input type="checkbox" class="checkbox" id="game2" name="game2"
+                    value="PokemonSilver">
+                    <label for="game2">I have played Pokemon Silver</label><br>
+                    <input type="checkbox" class="checkbox" id="game3" name="game3"
+                    value="PokemonWhite2">
+                    <label for="game3">I have played Pokemon White 2</label><br>
+                    <input type="checkbox" class="checkbox" id="game4" name="game4"
+                    value="PokemonSun">
+                    <label for="game4">I have played Pokemon Sun</label><br>
+                    <input type="checkbox" class="checkbox" id="game5" name="game5"
+                    value="PokemonViolet">
+                    <label for="game5">I have played Pokemon Violet</label><br>
+                    <input type="checkbox" class="checkbox" id="gameNone" name="gameNone"
+                    value="NeverPlayed">
+                    <label for="gameNone">I have never played a Pokemon game</label>
+                </div>
+                <div class="form">
+                    <div id="errorDropdown"></div>
+                    <label for="types">Choose a Pokemon Type:</label>
+                    <select name="types" id="types">
+                        <option value="default">Choose a Type!</option>
+                        <option value="grass">Grass</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="normal">Normal</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="ice">Ice</option>
+                        <option value="flying">Flying</option>
+                        <option value="rock">Rock</option>
+                        <option value="ground">Ground</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="poison">Poison</option>
+                        <option value="bug">Bug</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="your-fav">What's your
+                        favourite Pokemon?
+                    </label>
+                    <input
+                        id="pokemonname"
+                        name="pokemonname"
+                        type="text"
+                        value="Favourite Pokemon"
+                        pattern="\w{3,16}">
+                </div>
+                <div class="form">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                </div>
+                <div class="form">
+                    <label for="quantity">How many Pokemon game
+                        generations have you played?
+                    </label>
+                    <input type="number" id="quantity" name="quantity"
+                    min="0" max="9">
+                </div>
+                <div class="form">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+            <script src="script.js"></script>
+
+            <h1>Leave a Comment</h1>
+    <form id="commentForm">
+        <textarea id="comment" placeholder="Your comment here"></textarea>
+        <button type="button" onclick="submitComment()">Submit</button>
+    </form>
+    <h2>Comments</h2>
+    <div id="comments"></div>
+
+    <script>
+        function submitComment() {
+            let comment = document.getElementById('comment').value;
+            let commentsDiv = document.getElementById('comments');
+            commentsDiv.innerHTML += '<p>' + comment + '</p>';
+        }
+    </script>
+    </body>
+</html>
