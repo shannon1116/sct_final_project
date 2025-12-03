@@ -1,3 +1,6 @@
+import express, { Express } from "express";
+import { Request, Response, NextFunction } from "express";
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
